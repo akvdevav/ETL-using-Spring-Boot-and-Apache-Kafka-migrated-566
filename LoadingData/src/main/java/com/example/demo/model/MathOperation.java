@@ -54,14 +54,21 @@ public class MathOperation {
         this.result = result;
     }
 
-    // Additional helper methods required by other parts of the codebase
-
     /**
      * Returns the identifier of this entity.
      *
      * @return the operation field which serves as the primary key
      */
     public String getId() {
+        return operation;
+    }
+
+    /**
+     * Alias for getId() to satisfy callers expecting an explicit getter for the operation identifier.
+     *
+     * @return the operation identifier
+     */
+    public String getOperationId() {
         return operation;
     }
 
