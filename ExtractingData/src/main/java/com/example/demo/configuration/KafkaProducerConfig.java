@@ -20,8 +20,9 @@ public class KafkaProducerConfig {
 
     @Bean
     public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
-        RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
-        rabbitTemplate.setQueue(queueName);
-        return rabbitTemplate;
+        // Create a RabbitTemplate with the provided connection factory.
+        // No explicit queue binding is required here; the template can be used
+        // with convertAndSend specifying the target queue name at call time.
+        return new RabbitTemplate(connectionFactory);
     }
 }
