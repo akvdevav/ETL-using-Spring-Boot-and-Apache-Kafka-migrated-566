@@ -64,6 +64,15 @@ public class MathOperation {
     }
 
     /**
+     * Setter for the identifier to satisfy JPA and callers expecting a generic ID setter.
+     *
+     * @param id the identifier value to set
+     */
+    public void setId(String id) {
+        this.operation = id;
+    }
+
+    /**
      * Alias for getId() to satisfy callers expecting an explicit getter for the operation identifier.
      *
      * @return the operation identifier
